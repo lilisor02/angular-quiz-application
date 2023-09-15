@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="d-flex justify-content-between p-3">
+            <div class="image">
+                <img src="https://cdn-icons-png.flaticon.com/512/3407/3407038.png" width="90" alt="logo">
+            </div>
+            <div class="quiz-header">
+                <h4>Quiz</h4>
+                <span>Welcome {{name}}!</span>
+            </div>
+        </div>
+
+        <ng-container *ngIf="!isQuizCompleted">
+            <div class="d-flex justify-content-around py-3">
+                <div class="score">
+                    <h5>{{points}} Points</h5>
+                </div>
+
+                <div class="question-remaining">
+                    <span>Question {{currentQuestion+1}} of {{questionList.length}}</span>
+                </div>
+
+                <div class="timer">
+                    {{counter}} seconds ⏱
+                </div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="50"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div class="question">
+                <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+            </div>
+
+            <div class="option">
+                <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                    <li (click)="answer(currentQuestion+1, option)">
+                        <div appChangeBg [isCorrect]="option.correct" class="card">
+                            {{option.text}}
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i
+                        class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <button [disabled]="currentQuestion+2 > questionList.length" class="btn" (click)="nextQuestion()"><i
+                        class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="isQuizCompleted">
+            <div class="row d-flex justify-content-between mt-5">
+                <img style="width: 300px; height:300px;" class="img-fluid mx-auto" src="https://cdn-icons-png.flaticon.com/512/3146/3146600.png" alt="">
+                <div class="result text-center col-md-6 mt-5">
+                    <h3>Congratulations! <br>You can see your result below:</h3>
+                    <p>Total Question Attempted : {{questionList.length}} </p>
+                    <p>Total Correct Answered : {{correctAnswer}} </p>
+                    <p>Total Wrong Answered : {{incorrectAnswer}} </p>
+                    <p>Your Score : {{points}} Points </p>
+                </div>
+            </div>
+            <button class="btn mt-5" style="background-color: #94A684; width: 100px;" routerLink="/welcome"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        </ng-container>
+    </div>
+</div>
