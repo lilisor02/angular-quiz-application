@@ -1,27 +1,25 @@
-# AngularQuizApp
+# Angular Quiz Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+## What is it?
 
-## Development server
+Angular quiz application that contains a total of 9 questions. Each question has a 60 second timer and a correct answer.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![ezgif com-gif-maker (1)](https://github.com/lilisor02/angular-quiz-application/assets/72099239/dd622355-2be0-4217-85e3-0e8ec5b78e38)
 
-## Code scaffolding
+## Why is it?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I wanted to improve my Angular and TypeScript knowledge.
 
-## Build
+## Challenges
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+It was my first time creating an Angular application and I had to learn how the components work.
 
-## Running unit tests
+## Technologies used
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular and TypeScript.
 
-## Running end-to-end tests
+## Startin the application
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng serve -o
+```
