@@ -16,7 +16,7 @@ It was my first time creating an Angular application and I had to learn how the 
 
 ## Technologies used
 
-Angular and TypeScript.
+Angular, TypeScript, HTML and SCSS.
 
 ## Startin the application
 
